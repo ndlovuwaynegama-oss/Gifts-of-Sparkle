@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gifts of Sparkle | Professional Cleaning</title>
-  <meta name="description" content="Professional domestic and commercial cleaning services in Northern Ireland. Exceptional care. Pristine results." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <title>Gifts of Sparkle | Professional Cleaning Northern Ireland</title>
+  <meta name="description" content="Professional domestic & commercial cleaning services in Northern Ireland. Exceptional care, pristine results. Free estimates & reliable service." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     :root {
       --navy: #12335a;
       --navy-dark: #0a1f38;
@@ -18,1491 +23,594 @@
       --cream: #fbf8f2;
       --white: #ffffff;
       --text: #233244;
-      --muted: #6c7a89;
-      --card: rgba(255, 255, 255, 0.82);
+      --muted: #5f6f80;
+      --card: rgba(255, 255, 255, 0.86);
       --border: rgba(18, 51, 90, 0.1);
-      --shadow: 0 20px 50px rgba(10, 31, 56, 0.12);
-      --radius: 24px;
-      --transition: all 0.35s ease;
-      --body-bg:
-        radial-gradient(circle at top right, rgba(212, 175, 103, 0.18), transparent 32%),
-        radial-gradient(circle at left center, rgba(18, 51, 90, 0.08), transparent 28%),
-        linear-gradient(180deg, #fffdf9 0%, #f8f3ea 100%);
-      --topbar-bg: rgba(255,255,255,0.74);
-      --glass-bg: rgba(255,255,255,0.72);
-      --soft-bg: rgba(255,255,255,0.72);
-      --soft-border: rgba(18,51,90,0.08);
-      --footer-bg: rgba(255,255,255,0.65);
-      --panel-gradient: linear-gradient(160deg, rgba(212,175,103,0.08), transparent 40%, rgba(18,51,90,0.03));
+      --shadow: 0 20px 40px rgba(10, 31, 56, 0.1);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --transition: all 0.3s ease;
+      --body-bg: radial-gradient(circle at 10% 20%, rgba(212, 175, 103, 0.12), transparent 45%),
+                  linear-gradient(145deg, #fffcf5 0%, #f7f1e4 100%);
+      --topbar-bg: rgba(255, 255, 255, 0.78);
+      --glass-bg: rgba(255, 255, 255, 0.7);
+      --soft-border: rgba(18, 51, 90, 0.08);
+      --footer-bg: rgba(255, 255, 255, 0.68);
     }
 
     body.dark-theme {
-      --navy: #dbe7ff;
-      --navy-dark: #f7f8fb;
+      --navy: #dce5f5;
+      --navy-dark: #f0f3fa;
       --gold: #e2bc73;
-      --gold-soft: #f7e7c4;
+      --gold-soft: #f3e2bd;
       --cream: #0f1722;
       --white: #0b1320;
-      --text: #e7edf7;
-      --muted: #a9b4c6;
-      --card: rgba(17, 25, 40, 0.82);
-      --border: rgba(226, 188, 115, 0.12);
-      --shadow: 0 24px 56px rgba(0, 0, 0, 0.36);
-      --body-bg:
-        radial-gradient(circle at top right, rgba(226, 188, 115, 0.13), transparent 30%),
-        radial-gradient(circle at left center, rgba(92, 121, 171, 0.12), transparent 28%),
-        linear-gradient(180deg, #0b1220 0%, #111b2d 100%);
-      --topbar-bg: rgba(11,18,32,0.74);
-      --glass-bg: rgba(17,25,40,0.76);
-      --soft-bg: rgba(17,25,40,0.78);
-      --soft-border: rgba(226,188,115,0.08);
-      --footer-bg: rgba(11,18,32,0.72);
-      --panel-gradient: linear-gradient(160deg, rgba(226,188,115,0.08), transparent 40%, rgba(104,131,178,0.08));
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
+      --text: #eef2fa;
+      --muted: #b9c2d4;
+      --card: rgba(18, 28, 40, 0.85);
+      --border: rgba(226, 188, 115, 0.15);
+      --shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
+      --body-bg: radial-gradient(circle at 10% 20%, rgba(226, 188, 115, 0.12), transparent 45%),
+                  linear-gradient(145deg, #0c1424 0%, #121e30 100%);
+      --topbar-bg: rgba(11, 19, 32, 0.82);
+      --glass-bg: rgba(20, 28, 42, 0.78);
+      --soft-border: rgba(226, 188, 115, 0.12);
+      --footer-bg: rgba(11, 19, 32, 0.75);
     }
 
     body {
       font-family: 'Inter', sans-serif;
       color: var(--text);
       background: var(--body-bg);
-      line-height: 1.6;
-      overflow-x: hidden;
-      transition: background 0.35s ease, color 0.35s ease;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    button {
-      font: inherit;
+      line-height: 1.55;
+      transition: background 0.3s, color 0.3s;
     }
 
     .container {
-      width: min(1180px, 92%);
+      width: min(1240px, 92%);
       margin: 0 auto;
     }
 
     .topbar {
       position: fixed;
       top: 0;
-      left: 0;
       width: 100%;
       z-index: 999;
-      transition: var(--transition);
-      padding: 14px 0;
+      backdrop-filter: blur(16px);
       background: var(--topbar-bg);
-      backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--soft-border);
+      padding: 12px 0;
+      transition: var(--transition);
     }
-
     .topbar.scrolled {
-      box-shadow: 0 10px 30px rgba(10,31,56,0.08);
-      padding: 10px 0;
+      padding: 8px 0;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.05);
     }
-
-    body.dark-theme .topbar.scrolled {
-      box-shadow: 0 12px 30px rgba(0,0,0,0.28);
-    }
-
     .nav-wrap {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
+      display: flex;
       align-items: center;
-      gap: 18px;
+      justify-content: space-between;
+      gap: 20px;
     }
-
     .logo {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       gap: 12px;
-      min-width: 0;
-      border: none;
       background: none;
-      cursor: pointer;
-      padding: 0;
-      text-align: left;
-    }
-
-    .logo-badge {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, #102f56, #245086);
-      color: var(--gold-soft);
-      box-shadow: 0 12px 24px rgba(18, 51, 90, 0.18);
-      font-size: 1.3rem;
-      flex-shrink: 0;
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-    }
-
-    .logo-text strong {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.65rem;
-      color: var(--navy-dark);
-      letter-spacing: 0.01em;
-    }
-
-    .logo-text span {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      color: var(--gold);
-      margin-top: 4px;
-      text-transform: uppercase;
-    }
-
-    .nav-center {
-      display: flex;
-      justify-content: center;
-    }
-
-    .nav-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px;
-      border-radius: 999px;
-      background: var(--glass-bg);
-      border: 1px solid var(--soft-border);
-      box-shadow: 0 10px 25px rgba(10,31,56,0.08);
-      backdrop-filter: blur(12px);
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    body.dark-theme .nav-pill {
-      box-shadow: 0 14px 28px rgba(0,0,0,0.22);
-    }
-
-    .nav-link {
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--muted);
-      position: relative;
-      padding: 12px 16px;
-      cursor: pointer;
-      background: transparent;
       border: none;
-      border-radius: 999px;
-      font-family: inherit;
-      transition: var(--transition);
-      white-space: nowrap;
+      cursor: pointer;
     }
-
-    .nav-link:hover {
-      color: var(--navy-dark);
-      background: rgba(212,175,103,0.08);
-    }
-
-    .nav-link.active {
-      color: var(--navy-dark);
-      background: linear-gradient(135deg, rgba(212,175,103,0.22), rgba(212,175,103,0.08));
-      box-shadow: inset 0 0 0 1px rgba(212,175,103,0.22);
-    }
-
-    body.dark-theme .nav-link:hover,
-    body.dark-theme .nav-link.active {
-      background: rgba(226,188,115,0.12);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 10px;
-    }
-
-    .icon-btn {
+    .logo-badge {
       width: 48px;
       height: 48px;
-      display: inline-grid;
-      place-items: center;
+      background: linear-gradient(135deg, #102f56, #1f4670);
       border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      color: var(--gold-soft);
+      box-shadow: 0 12px 18px rgba(0,0,0,0.1);
+    }
+    .logo-text strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: var(--navy-dark);
+      line-height: 1.2;
+    }
+    .logo-text span {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .nav-pill {
+      display: flex;
+      gap: 6px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      border-radius: 80px;
+      padding: 6px 12px;
+      border: 1px solid var(--soft-border);
+    }
+    .nav-link {
+      background: transparent;
+      border: none;
+      padding: 10px 20px;
+      font-weight: 600;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: var(--transition);
+      color: var(--muted);
+    }
+    .nav-link.active, .nav-link:hover {
+      background: rgba(212, 175, 103, 0.2);
+      color: var(--navy-dark);
+    }
+    .icon-btn {
       background: var(--glass-bg);
       border: 1px solid var(--soft-border);
-      color: var(--navy-dark);
+      width: 46px;
+      height: 46px;
+      border-radius: 50px;
+      display: inline-grid;
+      place-items: center;
       cursor: pointer;
-      transition: var(--transition);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 10px 24px rgba(10,31,56,0.08);
-      flex-shrink: 0;
     }
-
-    .icon-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-    }
-
-    .theme-toggle .moon {
-      display: none;
-    }
-
-    body.dark-theme .theme-toggle .sun {
-      display: none;
-    }
-
-    body.dark-theme .theme-toggle .moon {
-      display: inline;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 14px 22px;
-      border-radius: 999px;
-      font-weight: 700;
-      border: 1px solid transparent;
-      transition: var(--transition);
-      cursor: pointer;
-      font-size: 0.96rem;
-      white-space: nowrap;
-    }
-
     .btn-primary {
-      background: linear-gradient(135deg, var(--gold), #c79f56);
+      background: linear-gradient(100deg, var(--gold), #b8924a);
+      border: none;
+      padding: 12px 26px;
+      border-radius: 60px;
+      font-weight: 800;
       color: #0a1f38;
-      box-shadow: 0 14px 28px rgba(212, 175, 103, 0.28);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 20px 36px rgba(212, 175, 103, 0.34);
-    }
-
-    .btn-secondary {
-      background: var(--glass-bg);
-      backdrop-filter: blur(10px);
-      border-color: var(--soft-border);
-      color: var(--navy-dark);
-    }
-
-    .btn-secondary:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow);
-    }
-
-    .menu-toggle {
-      display: none;
-    }
-
-    .page-shell {
-      padding-top: 102px;
-      min-height: 100vh;
-    }
-
-    .panel {
-      display: none;
-      min-height: calc(100vh - 102px);
-      padding: 40px 0 70px;
-      animation: panelFade 0.5s ease;
-    }
-
-    .panel.active {
-      display: block;
-    }
-
-    .hero {
-      min-height: calc(100vh - 142px);
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before,
-    .hero::after {
-      content: '';
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(16px);
-      opacity: 0.7;
-      pointer-events: none;
-      animation: float 8s ease-in-out infinite;
-    }
-
-    .hero::before {
-      width: 420px;
-      height: 420px;
-      background: radial-gradient(circle, rgba(212,175,103,0.22), transparent 70%);
-      top: -90px;
-      right: -80px;
-    }
-
-    .hero::after {
-      width: 320px;
-      height: 320px;
-      background: radial-gradient(circle, rgba(18,51,90,0.12), transparent 70%);
-      bottom: -80px;
-      left: -80px;
-      animation-delay: 1s;
-    }
-
-    .hero-grid,
-    .about-grid,
-    .areas-wrap,
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 44px;
-      align-items: center;
-    }
-
-    .eyebrow {
+      box-shadow: 0 8px 20px rgba(212,175,103,0.3);
+      transition: 0.2s;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 16px;
-      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-primary:hover { transform: translateY(-3px); }
+    .btn-secondary {
       background: var(--glass-bg);
+      backdrop-filter: blur(8px);
       border: 1px solid var(--soft-border);
-      box-shadow: 0 12px 26px rgba(10,31,56,0.07);
-      font-size: 0.84rem;
+      padding: 12px 26px;
+      border-radius: 60px;
       font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--navy);
-      margin-bottom: 24px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
     }
+    .menu-toggle { display: none; }
+    .mobile-menu { display: none; }
 
-    .hero h1,
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      color: var(--navy-dark);
-      letter-spacing: -0.03em;
-      line-height: 0.92;
-    }
+    .page-shell { padding-top: 102px; }
+    .panel { display: none; animation: fade 0.4s ease; }
+    .panel.active { display: block; }
 
-    .hero h1 {
-      font-size: clamp(3.2rem, 8vw, 6rem);
+    .badge-gold {
+      display: inline-flex;
+      gap: 10px;
+      background: rgba(212,175,103,0.12);
+      border-radius: 60px;
+      padding: 8px 20px;
+      font-weight: 700;
       margin-bottom: 20px;
     }
-
-    .hero h1 span,
-    .section-title span {
-      color: var(--gold);
-    }
-
     .section-title {
-      font-size: clamp(2.5rem, 5vw, 4.2rem);
-      margin-bottom: 16px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      color: var(--navy-dark);
+      margin-bottom: 20px;
     }
-
-    .section-subtitle {
-      max-width: 760px;
-      font-size: 1.02rem;
-      color: var(--muted);
-      margin-bottom: 42px;
+    .section-title span { color: var(--gold); }
+    .grid-2, .grid-3, .checklist-grid {
+      display: grid;
+      gap: 32px;
     }
-
-    .hero p,
-    .panel-copy,
-    .about-copy p,
-    .contact-panel > p {
-      font-size: 1.04rem;
-      color: var(--muted);
-    }
-
-    .hero p {
-      max-width: 620px;
-      margin-bottom: 30px;
-    }
-
-    .hero-actions,
-    .cta-box {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
-    }
-
-    .hero-points,
-    .area-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .point,
-    .area-tag {
-      padding: 11px 16px;
-      background: var(--soft-bg);
-      border: 1px solid var(--soft-border);
-      border-radius: 999px;
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--navy);
-      box-shadow: 0 10px 22px rgba(10,31,56,0.06);
-    }
-
-    .hero-visual {
-      position: relative;
-    }
-
-    .hero-card {
-      position: relative;
-      border-radius: 34px;
-      overflow: hidden;
-      min-height: 650px;
-      box-shadow: var(--shadow);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.1), rgba(10,31,56,0.12)),
-        url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80') center/cover;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, rgba(10,31,56,0.50) 100%);
-    }
-
-    .brand-panel,
-    .floating-card,
-    .rating-card,
-    .about-card,
-    .service-card,
-    .choose-card,
-    .area-card,
-    .contact-card,
-    .contact-panel,
-    .stat-box {
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .trust-card, .service-detailed, .feature-card, .area-item {
       background: var(--card);
+      backdrop-filter: blur(2px);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 28px;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+    .checklist-grid {
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 28px;
+    }
+    .checklist-card {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 24px;
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
-      transition: var(--transition);
     }
-
-    .brand-panel,
-    .floating-card,
-    .rating-card {
-      position: absolute;
-      backdrop-filter: blur(14px);
-    }
-
-    .brand-panel {
-      top: 24px;
-      left: 24px;
-      right: 24px;
-      border-radius: 24px;
-      padding: 20px 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-panel h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      line-height: 0.95;
+    .checklist-card h4 {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
       color: var(--navy-dark);
+      border-left: 3px solid var(--gold);
+      padding-left: 12px;
     }
-
-    .brand-panel h3 span { color: var(--gold); }
-
-    .brand-panel p {
-      font-size: 0.76rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--navy);
-    }
-
-    .brand-icon {
-      font-size: 2rem;
-      color: var(--gold);
-    }
-
-    .floating-card {
-      left: -22px;
-      bottom: 30px;
-      padding: 22px;
-      border-radius: 24px;
-      width: 240px;
-      animation: drift 4s ease-in-out infinite;
-    }
-
-    .mini-badge,
-    .service-icon,
-    .choose-icon,
-    .contact-icon {
-      width: 62px;
-      height: 62px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      font-size: 1.6rem;
-      margin-bottom: 18px;
-      background: linear-gradient(135deg, #102f56, #2f5b8e);
-      color: var(--gold-soft);
-      box-shadow: 0 12px 26px rgba(18,51,90,0.18);
-      flex-shrink: 0;
-    }
-
-    .mini-badge {
-      margin-bottom: 14px;
-      background: linear-gradient(135deg, var(--gold), #f0d6a1);
-      color: #0a1f38;
-      font-size: 1.5rem;
-    }
-
-    .floating-card h4,
-    .rating-card h4 {
-      font-size: 1.03rem;
-      color: var(--navy-dark);
-      margin-bottom: 6px;
-    }
-
-    .floating-card p,
-    .rating-card p {
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .rating-card {
-      right: -18px;
-      bottom: 140px;
-      width: 220px;
-      padding: 20px;
-      border-radius: 24px;
-      animation: drift 5s ease-in-out infinite 0.8s;
-    }
-
-    .stars {
-      color: var(--gold);
-      letter-spacing: 2px;
-      font-size: 1.05rem;
-      margin-bottom: 8px;
-    }
-
-    .about-card,
-    .service-card,
-    .choose-card,
-    .area-card,
-    .contact-card,
-    .contact-panel {
-      border-radius: 28px;
-      padding: 30px;
+    .checklist-card ul { list-style: none; }
+    .checklist-card li {
+      padding-left: 22px;
       position: relative;
-      overflow: hidden;
-    }
-
-    .about-card::before,
-    .service-card::before,
-    .choose-card::before,
-    .area-card::before,
-    .contact-card::before,
-    .contact-panel::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--panel-gradient);
-      pointer-events: none;
-    }
-
-    .feature-list,
-    .services-grid,
-    .choose-grid,
-    .stats-panel,
-    .contact-grid-mini {
-      display: grid;
-      gap: 18px;
-    }
-
-    .feature-list {
-      grid-template-columns: 1fr 1fr;
-      margin-top: 24px;
-    }
-
-    .feature-item,
-    .contact-item {
-      display: flex;
-      gap: 12px;
-      padding: 16px;
-      background: var(--soft-bg);
-      border: 1px solid var(--soft-border);
-      border-radius: 18px;
-    }
-
-    .feature-item i {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      flex-shrink: 0;
-      background: linear-gradient(135deg, rgba(212,175,103,0.2), rgba(18,51,90,0.12));
-      color: var(--navy-dark);
-      font-style: normal;
-      font-weight: 800;
-    }
-
-    .stats-panel {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .stat-box {
-      padding: 28px;
-      border-radius: 24px;
-      text-align: center;
-    }
-
-    .stat-box h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.7rem;
-      color: var(--navy-dark);
-      line-height: 1;
-      margin-bottom: 8px;
-    }
-
-    .stat-box p,
-    .contact-item span,
-    .service-card p,
-    .choose-card p,
-    .area-card p,
-    .contact-card p {
-      color: var(--muted);
-    }
-
-    .services-grid,
-    .choose-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .service-card:hover,
-    .choose-card:hover,
-    .area-card:hover,
-    .contact-card:hover,
-    .about-card:hover,
-    .contact-panel:hover,
-    .stat-box:hover {
-      transform: translateY(-6px);
-    }
-
-    .service-card h3,
-    .choose-card h3,
-    .area-card h3,
-    .contact-card h3 {
-      font-size: 1.2rem;
-      color: var(--navy-dark);
       margin-bottom: 10px;
+      font-size: 0.9rem;
     }
-
-    .service-card ul {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-    }
-
-    .service-card ul li {
-      position: relative;
-      padding-left: 24px;
-      color: var(--text);
-      font-size: 0.95rem;
-      font-weight: 600;
-    }
-
-    .service-card ul li::before {
-      content: '✦';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-      font-size: 0.95rem;
-    }
-
-    .choose-band {
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 5px;
-      background: linear-gradient(90deg, var(--gold), #315b8e);
-    }
-
-    .areas-wrap,
-    .contact-grid {
-      grid-template-columns: 1.1fr 0.9fr;
-    }
-
-    .area-panel {
-      background: linear-gradient(135deg, #0a1f38, #12335a);
-      color: white;
-      border-radius: 30px;
-      padding: 34px;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .area-panel::before {
-      content: '';
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle, rgba(212,175,103,0.22), transparent 70%);
-      right: -60px;
-      top: -60px;
-      border-radius: 50%;
-    }
-
-    .area-panel h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
-      margin-bottom: 12px;
-    }
-
-    .area-panel p {
-      color: rgba(255,255,255,0.82);
-      margin-bottom: 18px;
-      max-width: 600px;
-    }
-
-    .contact-grid-mini {
-      grid-template-columns: repeat(2, 1fr);
+    .checklist-card li::before { content: "✦"; position: absolute; left: 0; color: var(--gold); }
+    .contact-info-block {
+      background: var(--card);
+      border-radius: 28px;
+      padding: 28px;
       margin-top: 24px;
     }
-
-    .contact-item strong {
-      display: block;
-      color: var(--navy-dark);
-      margin-bottom: 4px;
-    }
-
-    .footer {
-      padding: 26px 0 40px;
-      border-top: 1px solid var(--soft-border);
-      background: var(--footer-bg);
-      backdrop-filter: blur(12px);
-    }
-
-    .footer-wrap {
+    .contact-detail {
+      margin: 12px 0;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 18px;
+      gap: 12px;
       flex-wrap: wrap;
     }
-
-    .footer p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-link {
-      color: var(--navy);
-      font-weight: 600;
-      cursor: pointer;
-      background: none;
-      border: none;
-      font-family: inherit;
-      font-size: 0.95rem;
-    }
-
     .whatsapp-float {
       position: fixed;
-      right: 20px;
-      bottom: 20px;
-      width: 64px;
-      height: 64px;
+      bottom: 24px;
+      right: 24px;
+      background: #25D366;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, #25d366, #18b757);
-      color: white;
-      font-size: 1.8rem;
-      box-shadow: 0 16px 30px rgba(37, 211, 102, 0.3);
+      font-size: 2rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
       z-index: 1000;
-      animation: pulse 2.3s infinite;
+      transition: 0.2s;
     }
-
-    .mobile-menu {
-      display: none;
+    footer {
+      background: var(--footer-bg);
+      border-top: 1px solid var(--soft-border);
+      padding: 30px 0;
+      margin-top: 40px;
     }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(12px); }
-    }
-
-    @keyframes drift {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45); }
-      70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-    }
-
-    @keyframes panelFade {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 1180px) {
-      .nav-wrap {
-        grid-template-columns: auto 1fr auto;
-      }
-
-      .nav-pill {
-        gap: 4px;
-      }
-
-      .nav-link {
-        padding: 11px 14px;
-        font-size: 0.92rem;
-      }
-    }
-
-    @media (max-width: 1080px) {
-      .hero-grid,
-      .about-grid,
-      .areas-wrap,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-card {
-        min-height: 560px;
-      }
-
-      .services-grid,
-      .choose-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 940px) {
-      .nav-center {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: inline-grid;
-      }
-
-      .nav-actions .btn-primary {
-        display: none;
-      }
-
+    @keyframes fade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 1000px) {
+      .nav-pill { display: none; }
+      .menu-toggle { display: inline-grid; }
+      .nav-actions .btn-primary { display: none; }
       .mobile-menu {
         position: absolute;
-        top: calc(100% + 12px);
-        left: 4%;
-        right: 4%;
+        top: 80px;
+        left: 5%;
+        width: 90%;
         background: var(--topbar-bg);
-        backdrop-filter: blur(18px);
-        border-radius: 26px;
-        border: 1px solid var(--soft-border);
-        box-shadow: var(--shadow);
-        padding: 16px;
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .mobile-menu.active {
-        display: flex;
-      }
-
-      .mobile-link {
-        text-align: left;
-        width: 100%;
-        background: var(--glass-bg);
-        border: 1px solid var(--soft-border);
-        font: inherit;
-        color: var(--navy-dark);
-        font-weight: 600;
-        padding: 14px 16px;
-        border-radius: 16px;
-        cursor: pointer;
-      }
-
-      .mobile-menu .btn {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 860px) {
-      .feature-list,
-      .contact-grid-mini,
-      .stats-panel,
-      .services-grid,
-      .choose-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .brand-panel {
-        padding: 16px 18px;
-      }
-
-      .brand-panel h3 {
-        font-size: 1.55rem;
-      }
-
-      .floating-card,
-      .rating-card {
-        position: relative;
-        right: auto;
-        left: auto;
-        bottom: auto;
-        width: 100%;
-        margin-top: 14px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .container {
-        width: min(1180px, 94%);
-      }
-
-      .page-shell {
-        padding-top: 92px;
-      }
-
-      .panel {
-        min-height: calc(100vh - 92px);
-        padding: 22px 0 48px;
-      }
-
-      .topbar {
-        padding: 10px 0;
-      }
-
-      .nav-wrap {
-        gap: 10px;
-      }
-
-      .logo-badge {
-        width: 42px;
-        height: 42px;
-      }
-
-      .logo-text strong {
-        font-size: 1.2rem;
-      }
-
-      .logo-text span {
-        font-size: 0.56rem;
-        letter-spacing: 0.14em;
-      }
-
-      .icon-btn {
-        width: 44px;
-        height: 44px;
-        border-radius: 14px;
-      }
-
-      .hero {
-        min-height: auto;
-        padding-top: 6px;
-      }
-
-      .hero h1 {
-        font-size: clamp(2.6rem, 12vw, 4rem);
-      }
-
-      .hero-card {
-        min-height: 420px;
+        backdrop-filter: blur(28px);
         border-radius: 28px;
-      }
-
-      .about-card,
-      .service-card,
-      .choose-card,
-      .contact-panel,
-      .area-card,
-      .contact-card,
-      .area-panel {
-        padding: 22px;
-        border-radius: 24px;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .hero-actions,
-      .cta-box {
         flex-direction: column;
+        padding: 20px;
+        gap: 12px;
+        border: 1px solid var(--soft-border);
+        display: none;
+        z-index: 999;
       }
-
-      .contact-grid-mini {
-        grid-template-columns: 1fr;
-      }
+      .mobile-menu.active { display: flex; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .checklist-grid { grid-template-columns: 1fr; gap: 18px; }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .hero-visual .hero-card { min-height: 320px; }
+    }
+    .hero-card {
+      background: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=1200&q=80') center/cover;
+      border-radius: 40px;
+      min-height: 480px;
+      position: relative;
+    }
+    .floating-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 16px;
+      width: 220px;
     }
   </style>
 </head>
 <body>
-  <header class="topbar" id="topbar">
-    <div class="container nav-wrap">
-      <button class="logo nav-link active" data-panel="home" aria-label="Go to home section">
-        <div class="logo-badge">✦</div>
-        <div class="logo-text">
-          <strong>Gifts of Sparkle</strong>
-          <span>Professional Cleaning</span>
-        </div>
-      </button>
-
-      <div class="nav-center">
-        <nav class="nav-pill nav-links" aria-label="Primary navigation">
-          <button class="nav-link active" data-panel="home">Home</button>
-          <button class="nav-link" data-panel="about">About</button>
-          <button class="nav-link" data-panel="services">Services</button>
-          <button class="nav-link" data-panel="why-us">Why Choose Us</button>
-          <button class="nav-link" data-panel="areas">Areas</button>
-          <button class="nav-link" data-panel="contact">Contact</button>
-        </nav>
-      </div>
-
-      <div class="nav-actions">
-        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle light and dark mode">
-          <span class="sun">☀</span>
-          <span class="moon">☾</span>
-        </button>
-        <a href="https://wa.me/447000000000" class="btn btn-primary" target="_blank">Book on WhatsApp</a>
-        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+<header class="topbar" id="topbar">
+  <div class="container nav-wrap">
+    <button class="logo" data-panel="home">
+      <div class="logo-badge">✦</div>
+      <div class="logo-text"><strong>Gifts of Sparkle</strong><span>Professional Cleaning</span></div>
+    </button>
+    <div class="nav-center">
+      <div class="nav-pill">
+        <button class="nav-link active" data-panel="home">Home</button>
+        <button class="nav-link" data-panel="about">About</button>
+        <button class="nav-link" data-panel="services">Services</button>
+        <button class="nav-link" data-panel="checklist">How We Keep Busy</button>
+        <button class="nav-link" data-panel="why-us">Why Us</button>
+        <button class="nav-link" data-panel="areas">Areas</button>
+        <button class="nav-link" data-panel="contact">Contact</button>
       </div>
     </div>
-
-    <div class="mobile-menu container" id="mobileMenu">
-      <button class="mobile-link" data-panel="home">Home</button>
-      <button class="mobile-link" data-panel="about">About</button>
-      <button class="mobile-link" data-panel="services">Services</button>
-      <button class="mobile-link" data-panel="why-us">Why Choose Us</button>
-      <button class="mobile-link" data-panel="areas">Areas</button>
-      <button class="mobile-link" data-panel="contact">Contact</button>
-      <a href="https://wa.me/447000000000" class="btn btn-primary" target="_blank">Book on WhatsApp</a>
+    <div class="nav-actions">
+      <button class="icon-btn theme-toggle" id="themeToggle">☀️</button>
+      <a href="https://wa.me/447721448758" class="btn-primary" target="_blank">📱 Book on WhatsApp</a>
+      <button class="icon-btn menu-toggle" id="menuToggle">☰</button>
     </div>
-  </header>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-link nav-link" data-panel="home">Home</button>
+    <button class="mobile-link nav-link" data-panel="about">About</button>
+    <button class="mobile-link nav-link" data-panel="services">Services</button>
+    <button class="mobile-link nav-link" data-panel="checklist">How We Keep Busy</button>
+    <button class="mobile-link nav-link" data-panel="why-us">Why Us</button>
+    <button class="mobile-link nav-link" data-panel="areas">Areas</button>
+    <button class="mobile-link nav-link" data-panel="contact">Contact</button>
+    <a href="https://wa.me/447721448758" class="btn-primary" style="text-align:center">Book on WhatsApp</a>
+  </div>
+</header>
 
-  <main class="page-shell">
-    <section class="panel active" id="home-panel">
-      <div class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <div class="eyebrow">✦ Exceptional Care • Pristine Results</div>
-            <h1>Luxury Cleaning With a <span>Sparkling Finish</span></h1>
-            <p>
-              Gifts of Sparkle offers professional domestic and commercial cleaning services across Northern Ireland.
-              We bring elegance, reliability, and attention to detail to every space we clean.
-            </p>
-
-            <div class="hero-actions">
-              <a href="https://wa.me/447000000000" class="btn btn-primary" target="_blank">Book Now on WhatsApp</a>
-              <button class="btn btn-secondary nav-link" data-panel="contact">Call Us Today</button>
-            </div>
-
-            <div class="hero-points">
-              <div class="point">Domestic Cleaning</div>
-              <div class="point">Commercial Cleaning</div>
-              <div class="point">Northern Ireland</div>
-              <div class="point">Professional & Reliable</div>
-            </div>
-          </div>
-
-          <div class="hero-visual">
-            <div class="hero-card">
-              <div class="hero-overlay"></div>
-
-              <div class="brand-panel">
-                <div>
-                  <p>Gifts of Sparkle</p>
-                  <h3>Professional <span>Cleaning</span></h3>
-                </div>
-                <div class="brand-icon">✦</div>
-              </div>
-            </div>
-
-            <div class="floating-card">
-              <div class="mini-badge">🧼</div>
-              <h4>Fresh, Detailed Cleaning</h4>
-              <p>From family homes to business spaces, we deliver spotless results with care.</p>
-            </div>
-
-            <div class="rating-card">
-              <div class="stars">★★★★★</div>
-              <h4>Trusted Presentation</h4>
-              <p>A premium online presence that helps your brand look professional from day one.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel" id="about-panel">
-      <div class="container about-grid">
-        <div class="about-copy">
-          <h2 class="section-title">About <span>Gifts of Sparkle</span></h2>
-          <p class="section-subtitle">
-            A refined and dependable cleaning brand serving domestic and commercial clients with professionalism,
-            consistency, and exceptional care.
-          </p>
-
-          <div class="about-card">
-            <p>
-              Gifts of Sparkle is a professional cleaning service based in Northern Ireland, proudly serving both domestic and commercial clients.
-              We are committed to leaving every space fresh, spotless, and beautifully presented.
-            </p>
-            <p>
-              Whether you need regular home cleaning, office upkeep, or a deep clean for a special situation, our service is designed to deliver peace of mind and pristine results.
-            </p>
-
-            <div class="feature-list">
-              <div class="feature-item">
-                <i>✓</i>
-                <div>
-                  <strong>Reliable Service</strong>
-                  <p>Consistent cleaning with a professional standard.</p>
-                </div>
-              </div>
-              <div class="feature-item">
-                <i>✦</i>
-                <div>
-                  <strong>Attention to Detail</strong>
-                  <p>Every room finished with care and precision.</p>
-                </div>
-              </div>
-              <div class="feature-item">
-                <i>⌂</i>
-                <div>
-                  <strong>Domestic Cleaning</strong>
-                  <p>Comfortable, fresh homes for busy families and individuals.</p>
-                </div>
-              </div>
-              <div class="feature-item">
-                <i>▣</i>
-                <div>
-                  <strong>Commercial Cleaning</strong>
-                  <p>Clean, polished business spaces that leave a strong impression.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="stats-panel">
-          <div class="stat-box">
-            <h3>2</h3>
-            <p>Service Categories</p>
-          </div>
-          <div class="stat-box">
-            <h3>100%</h3>
-            <p>Professional Focus</p>
-          </div>
-          <div class="stat-box">
-            <h3>24/7</h3>
-            <p>Booking Availability</p>
-          </div>
-          <div class="stat-box">
-            <h3>NI</h3>
-            <p>Northern Ireland Coverage</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel" id="services-panel">
-      <div class="container">
-        <h2 class="section-title">Our <span>Cleaning Services</span></h2>
-        <p class="section-subtitle">
-          Clean, modern service cards designed to make the business look premium and easy for customers to understand.
-        </p>
-
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="service-icon">🏠</div>
-            <h3>Domestic Cleaning</h3>
-            <p>Professional cleaning tailored for homes, flats, and private residences.</p>
-            <ul>
-              <li>General home cleaning</li>
-              <li>Kitchen and bathroom care</li>
-              <li>Dusting, mopping, and tidying</li>
-              <li>Flexible scheduled visits</li>
-            </ul>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">🏢</div>
-            <h3>Commercial Cleaning</h3>
-            <p>Dependable cleaning for offices, shops, workspaces, and commercial properties.</p>
-            <ul>
-              <li>Office cleaning and upkeep</li>
-              <li>Reception and common areas</li>
-              <li>Professional presentation standards</li>
-              <li>Custom business cleaning plans</li>
-            </ul>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">✨</div>
-            <h3>Deep Cleaning</h3>
-            <p>For properties that need extra attention, detail, and a refreshed finish.</p>
-            <ul>
-              <li>Move-in / move-out cleaning</li>
-              <li>Detailed room refreshes</li>
-              <li>Heavy-duty cleaning support</li>
-              <li>One-off premium service</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel" id="why-us-panel">
-      <div class="container">
-        <h2 class="section-title">Why <span>Choose Us</span></h2>
-        <p class="section-subtitle">
-          A polished website should also communicate trust, quality, and ease of booking. These are the core selling points your client can stand behind.
-        </p>
-
-        <div class="choose-grid">
-          <article class="choose-card">
-            <div class="choose-icon">✓</div>
-            <h3>Reliable & Professional</h3>
-            <p>We show up with the right attitude, strong standards, and a commitment to excellent service.</p>
-            <div class="choose-band"></div>
-          </article>
-
-          <article class="choose-card">
-            <div class="choose-icon">🕒</div>
-            <h3>Flexible Booking</h3>
-            <p>Customers can book through WhatsApp or phone, making the process easy and convenient.</p>
-            <div class="choose-band"></div>
-          </article>
-
-          <article class="choose-card">
-            <div class="choose-icon">💎</div>
-            <h3>Attention to Detail</h3>
-            <p>We focus on spotless presentation and consistent cleaning quality for every type of property.</p>
-            <div class="choose-band"></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel" id="areas-panel">
-      <div class="container areas-wrap">
-        <div class="area-panel">
-          <h3>Serving Northern Ireland</h3>
-          <p>
-            Gifts of Sparkle proudly provides domestic and commercial cleaning services across Northern Ireland,
-            including Armagh and surrounding areas.
-          </p>
-          <p>
-            The website is structured so specific service towns or coverage zones can be added later as the business grows.
-          </p>
-
-          <div class="area-tags">
-            <span class="area-tag">Armagh</span>
-            <span class="area-tag">Northern Ireland</span>
-            <span class="area-tag">Homes</span>
-            <span class="area-tag">Businesses</span>
-          </div>
-        </div>
-
-        <div style="display:grid; gap:20px;">
-          <article class="area-card">
-            <h3>Domestic Clients</h3>
-            <p>Perfect for homeowners, tenants, busy families, and anyone who wants a cleaner, fresher living space.</p>
-          </article>
-          <article class="area-card">
-            <h3>Commercial Clients</h3>
-            <p>Ideal for offices, retail spaces, studios, and business environments that need a clean, polished appearance.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel" id="contact-panel">
-      <div class="container contact-grid">
+<main class="page-shell">
+  <!-- HOME PANEL (exact client copy) -->
+  <section class="panel active" id="home-panel">
+    <div class="container">
+      <div class="grid-2" style="align-items: center;">
         <div>
-          <h2 class="section-title">Book Your <span>Cleaning Today</span></h2>
-          <p class="section-subtitle">
-            Ready to make a strong impression online and help customers contact the business quickly? This section is built for conversion.
-          </p>
-
-          <div class="contact-panel">
-            <p>
-              Get in touch with Gifts of Sparkle for professional domestic and commercial cleaning in Northern Ireland.
-              Customers can book by WhatsApp, phone, or email.
-            </p>
-
-            <div class="contact-grid-mini">
-              <div class="contact-item">
-                <div class="contact-icon">📱</div>
-                <div>
-                  <strong>WhatsApp</strong>
-                  <span>Add business WhatsApp number</span>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon">📞</div>
-                <div>
-                  <strong>Phone</strong>
-                  <span>Add mobile or landline number</span>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon">✉️</div>
-                <div>
-                  <strong>Email</strong>
-                  <span>info@giftsofsparkle.com</span>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon">📍</div>
-                <div>
-                  <strong>Location</strong>
-                  <span>Northern Ireland</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="cta-box">
-              <a href="https://wa.me/447000000000" class="btn btn-primary" target="_blank">Book on WhatsApp</a>
-              <a href="tel:+440000000000" class="btn btn-secondary">Call Us Today</a>
+          <div class="badge-gold">✦ Professional Domestic & Commercial Cleaning ✦</div>
+          <h1 class="section-title">Exceptional Care.<br><span>Pristine Results.</span></h1>
+          <p style="font-size:1.1rem; margin-bottom: 24px;">At Gifts of Sparkle, we provide high-quality cleaning services designed to leave your space spotless, fresh, and professionally maintained. Whether it's your home or business, we deliver results you can trust.</p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="https://wa.me/447721448758" class="btn-primary" target="_blank">📲 Book Now on WhatsApp</a>
+            <button class="btn-secondary" data-panel="contact">📞 Call Us Today</button>
+          </div>
+          <div style="display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap;">
+            <span class="badge-gold" style="background: var(--card);">🏠 Domestic Cleaning</span>
+            <span class="badge-gold" style="background: var(--card);">🏢 Commercial Cleaning</span>
+            <span class="badge-gold" style="background: var(--card);">🧹 Deep Cleaning</span>
+            <span class="badge-gold" style="background: var(--card);">✨ Attention to Detail</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="floating-badge">
+              <div>⭐️⭐️⭐️⭐️⭐️</div>
+              <strong>Trusted across NI</strong>
+              <p style="font-size:0.8rem;">Reliable · Professional · Sparkling finish</p>
             </div>
           </div>
         </div>
-
-        <div class="contact-card">
-          <div class="service-icon">✦</div>
-          <h3>Professional Brand Presentation</h3>
-          <p>
-            This website is styled to feel elegant, trustworthy, and premium — matching the gold and navy look from the original brand reference.
-          </p>
-          <p>
-            Once the remaining details come in, you can easily update the contact information, service prices, testimonials, and service areas.
-          </p>
-          <p>
-            It is already mobile responsive, modern, and structured to help the business convert visitors into bookings.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-wrap">
-      <button class="logo footer-link" data-panel="home">
-        <div class="logo-badge">✦</div>
-        <div class="logo-text">
-          <strong>Gifts of Sparkle</strong>
-          <span>Professional Cleaning</span>
-        </div>
-      </button>
-
-      <p>© <span id="year"></span> Gifts of Sparkle. Exceptional care. Pristine results.</p>
-
-      <div class="footer-links">
-        <button class="footer-link" data-panel="about">About</button>
-        <button class="footer-link" data-panel="services">Services</button>
-        <button class="footer-link" data-panel="contact">Contact</button>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <a class="whatsapp-float" href="https://wa.me/447000000000" target="_blank" aria-label="Chat on WhatsApp">☎</a>
+  <!-- ABOUT PANEL (exact client copy) -->
+  <section class="panel" id="about-panel">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <h2 class="section-title">About <span>Gifts of Sparkle</span></h2>
+          <p class="muted" style="margin-bottom: 24px;">Gifts of Sparkle is a professional cleaning service based in Northern Ireland, offering both domestic and commercial cleaning solutions.</p>
+          <div class="trust-card">
+            <p>We pride ourselves on delivering exceptional care, attention to detail, and reliable service to every client. Our goal is simple — to leave every space we touch sparkling clean and refreshed.</p>
+            <p style="margin-top: 16px;">Whether it’s a home, office, or commercial property, we bring professionalism and quality to every job.</p>
+          </div>
+        </div>
+        <div class="trust-card">
+          <h3>✨ Our Promise</h3>
+          <p>Fully insured, eco-friendly practices, and a team that treats your property with the utmost respect. We believe in clear communication, flexible scheduling, and results that shine.</p>
+          <p style="margin-top: 18px;"><strong>✓ Local & family-run</strong><br>✓ 100% satisfaction focus<br>✓ Free, no-obligation quotes</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <script>
-    const topbar = document.getElementById('topbar');
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const themeToggle = document.getElementById('themeToggle');
-    const year = document.getElementById('year');
-    const panels = document.querySelectorAll('.panel');
-    const navButtons = document.querySelectorAll('[data-panel]');
-    const THEME_KEY = 'gifts-of-sparkle-theme';
+  <!-- SERVICES PANEL (exact client copy) -->
+  <section class="panel" id="services-panel">
+    <div class="container">
+      <h2 class="section-title">Our <span>Cleaning Services</span></h2>
+      <div class="grid-3">
+        <div class="service-detailed"><div class="icon-lg" style="font-size:2.2rem;">🏠</div><h3>Domestic Cleaning</h3><p>Regular home cleaning, deep cleaning, kitchen, bathroom, and full house cleaning services tailored to your needs.</p></div>
+        <div class="service-detailed"><div class="icon-lg" style="font-size:2.2rem;">🏢</div><h3>Commercial Cleaning</h3><p>Professional cleaning for offices, shops, and business spaces to maintain a clean and welcoming environment.</p></div>
+        <div class="service-detailed"><div class="icon-lg" style="font-size:2.2rem;">✨</div><h3>Deep Cleaning</h3><p>Intensive cleaning for move-ins, move-outs, or spaces that need extra attention.</p></div>
+      </div>
+    </div>
+  </section>
 
-    year.textContent = new Date().getFullYear();
+  <!-- NEW CHECKLIST SECTION: HOW WE KEEP BUSY (exactly as requested) -->
+  <section class="panel" id="checklist-panel">
+    <div class="container">
+      <h2 class="section-title">How We <span>Keep Busy</span></h2>
+      <p class="muted" style="margin-bottom: 20px;">Our signature detailed cleaning process — every corner, every surface, every time.</p>
+      <div class="checklist-grid">
+        <!-- All Rooms -->
+        <div class="checklist-card">
+          <h4>🧹 All Rooms</h4>
+          <ul>
+            <li>Tidy & Straighten</li>
+            <li>If you leave fresh bed sheets on the bed, we will change them</li>
+            <li>Dust Furnishings, Fixtures & Entertainment Centers</li>
+            <li>Dust Baseboards, Blinds, Chair Railing, Wall Molding</li>
+            <li>Dust Ceiling Fan Blades</li>
+            <li>Clean Light Switch Plates</li>
+            <li>Vacuum, Mop & Collect Trash</li>
+          </ul>
+        </div>
+        <!-- Kitchen -->
+        <div class="checklist-card">
+          <h4>🍽️ Kitchen</h4>
+          <ul>
+            <li>Clean Dishes that are in Sink</li>
+            <li>Clean Sink, Countertop & Backsplash</li>
+            <li>Clean Face of Appliances</li>
+            <li>Clean Inside Microwave</li>
+            <li>Clean Top of Fridge</li>
+            <li>Clean Face of Cabinets</li>
+            <li>Clean Utility/Laundry Room</li>
+            <li>Wipe Down Table & Chairs</li>
+          </ul>
+        </div>
+        <!-- Bathrooms -->
+        <div class="checklist-card">
+          <h4>🛁 Bathrooms</h4>
+          <ul>
+            <li>Clean Mirrors, Sinks, Counters & Cabinets</li>
+            <li>Clean & Sanitize Toilets, Tubs & Showers, and Shower Door & Track</li>
+            <li>Shine Chrome & Fixtures</li>
+            <li>Shake/Vacuum Rugs</li>
+            <li>Mop/Hand Wipe Floor</li>
+            <li>Clean Baseboards, Door Panels, Light Switch Plates</li>
+          </ul>
+        </div>
+        <!-- Windows & Doors -->
+        <div class="checklist-card">
+          <h4>🪟 Windows & Doors</h4>
+          <ul>
+            <li>Dust All Window Sills</li>
+            <li>Clean Window above Kitchen Sink</li>
+            <li>Clean Front Door Glass & Sliding Glass Patio Door</li>
+            <li>Spot Clean French Door glass panes</li>
+            <li>Wipe around Door Knobs</li>
+            <li>Dust Door Paneling</li>
+            <li>Sweep/Wipe Around the Front Door on the Outside</li>
+            <li>Shake out Door Mats</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    const savedTheme = localStorage.getItem(THEME_KEY);
-    if (savedTheme === 'dark') {
-      document.body.classList.add('dark-theme');
-    }
+  <!-- WHY CHOOSE US (exact client copy) -->
+  <section class="panel" id="why-us-panel">
+    <div class="container">
+      <h2 class="section-title">Why Choose <span>Gifts of Sparkle?</span></h2>
+      <div class="grid-3">
+        <div class="feature-card"><div class="icon-lg" style="font-size:2rem;">✓</div><h3>Reliable and professional service</h3><p>Consistent, punctual, and always respectful of your property.</p></div>
+        <div class="feature-card"><div class="icon-lg" style="font-size:2rem;">🔍</div><h3>Attention to detail in every clean</h3><p>We don’t cut corners — every surface gets the care it deserves.</p></div>
+        <div class="feature-card"><div class="icon-lg" style="font-size:2rem;">📅</div><h3>Flexible bookings for your convenience</h3><p>One-off, weekly, or custom schedules to suit your lifestyle.</p></div>
+        <div class="feature-card"><div class="icon-lg" style="font-size:2rem;">🏢🏠</div><h3>Trusted for both homes and businesses</h3><p>Commercial & domestic expertise under one roof.</p></div>
+        <div class="feature-card"><div class="icon-lg" style="font-size:2rem;">😊</div><h3>Dedicated to customer satisfaction</h3><p>Your happiness is our priority — we guarantee sparkling results.</p></div>
+      </div>
+    </div>
+  </section>
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        topbar.classList.add('scrolled');
-      } else {
-        topbar.classList.remove('scrolled');
-      }
+  <!-- SERVICE AREA (exact client copy) -->
+  <section class="panel" id="areas-panel">
+    <div class="container">
+      <h2 class="section-title">Areas <span>We Serve</span></h2>
+      <div class="trust-card" style="text-align: center; padding: 40px;">
+        <p style="font-size: 1.2rem;">We proudly offer cleaning services across <strong>Northern Ireland</strong>, including <strong>Armagh</strong> and surrounding areas.</p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 24px;">
+          <span class="badge-gold">Belfast</span>
+          <span class="badge-gold">Lisburn</span>
+          <span class="badge-gold">Armagh</span>
+          <span class="badge-gold">Derry~Londonderry</span>
+          <span class="badge-gold">Newry</span>
+          <span class="badge-gold">Bangor</span>
+          <span class="badge-gold">Ballymena</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION (exact client copy: emails, phone, website) -->
+  <section class="panel" id="contact-panel">
+    <div class="container">
+      <h2 class="section-title">Book Your <span>Cleaning Today</span></h2>
+      <div class="grid-2">
+        <div>
+          <p class="muted" style="margin-bottom: 20px;">Ready to experience professional cleaning? Get in touch with us today and let us take care of the rest.</p>
+          <div class="contact-info-block">
+            <div class="contact-detail">🌐 <strong>Website:</strong> www.giftsofsparkle.co.uk</div>
+            <div class="contact-detail">📧 <strong>General:</strong> info@giftsofsparkle.co.uk</div>
+            <div class="contact-detail">📅 <strong>Bookings:</strong> bookings@giftsofsparkle.co.uk</div>
+            <div class="contact-detail">👩‍💼 <strong>Bertha:</strong> bertha@giftsofsparkle.co.uk</div>
+            <div class="contact-detail">📞 <strong>Phone / WhatsApp:</strong> 0772 144 8758</div>
+          </div>
+          <div style="display: flex; gap: 16px; margin-top: 20px; flex-wrap: wrap;">
+            <a href="https://wa.me/447721448758" class="btn-primary" target="_blank">💬 Book on WhatsApp</a>
+            <a href="tel:07721448758" class="btn-secondary">📞 Call Now</a>
+          </div>
+        </div>
+        <div class="trust-card">
+          <h3>✨ Why book with us?</h3>
+          <p>✔️ Fast response & free estimates<br>✔️ Fully trained, friendly staff<br>✔️ Eco-friendly products available<br>✔️ 100% satisfaction guarantee</p>
+          <p style="margin-top: 20px;">We’ll work around your schedule — evenings and weekends available. Contact us now for a sparkling clean space!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+    <button class="logo" data-panel="home" style="background: none;"><div class="logo-badge">✦</div><div class="logo-text"><strong>Gifts of Sparkle</strong><span>Professional Cleaning</span></div></button>
+    <p>© <span id="year"></span> Gifts of Sparkle — Exceptional Care. Pristine Results.</p>
+    <div><button class="footer-link nav-link" data-panel="contact">Contact</button></div>
+  </div>
+</footer>
+<a class="whatsapp-float" href="https://wa.me/447721448758" target="_blank">💬</a>
+
+<script>
+  const topbar = document.getElementById('topbar');
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const themeToggle = document.getElementById('themeToggle');
+  const panels = document.querySelectorAll('.panel');
+  const navBtns = document.querySelectorAll('[data-panel]');
+  const yearSpan = document.getElementById('year');
+  yearSpan.innerText = new Date().getFullYear();
+
+  const savedTheme = localStorage.getItem('gifts-theme');
+  if (savedTheme === 'dark') document.body.classList.add('dark-theme');
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    localStorage.setItem('gifts-theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+    themeToggle.innerText = document.body.classList.contains('dark-theme') ? '🌙' : '☀️';
+  });
+  if (document.body.classList.contains('dark-theme')) themeToggle.innerText = '🌙';
+  else themeToggle.innerText = '☀️';
+
+  function showPanel(panelId) {
+    panels.forEach(p => p.classList.remove('active'));
+    const targetPanel = document.getElementById(`${panelId}-panel`);
+    if (targetPanel) targetPanel.classList.add('active');
+    navBtns.forEach(btn => {
+      if (btn.dataset.panel === panelId) btn.classList.add('active');
+      else btn.classList.remove('active');
     });
+    if (mobileMenu) mobileMenu.classList.remove('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-    if (menuToggle) {
-      menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-      });
-    }
-
-    if (themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-        const mode = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
-        localStorage.setItem(THEME_KEY, mode);
-      });
-    }
-
-    function showPanel(panelName) {
-      panels.forEach(panel => panel.classList.remove('active'));
-
-      const activePanel = document.getElementById(`${panelName}-panel`);
-      if (activePanel) {
-        activePanel.classList.add('active');
-      }
-
-      document.querySelectorAll('.nav-link').forEach(button => {
-        button.classList.toggle('active', button.dataset.panel === panelName);
-      });
-
-      mobileMenu.classList.remove('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    navButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const panelName = button.dataset.panel;
-        if (panelName) showPanel(panelName);
-      });
+  navBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const panel = btn.dataset.panel;
+      if (panel) showPanel(panel);
     });
-  </script>
+  });
+
+  menuToggle?.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) topbar.classList.add('scrolled');
+    else topbar.classList.remove('scrolled');
+  });
+</script>
 </body>
 </html>
